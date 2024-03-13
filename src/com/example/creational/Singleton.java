@@ -1,4 +1,4 @@
-package com.example.structural;
+package com.example.creational;
 
 class LazyInitialization {
 	private static LazyInitialization lazyInitialization;
