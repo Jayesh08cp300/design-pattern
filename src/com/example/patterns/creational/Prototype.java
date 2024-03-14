@@ -1,4 +1,4 @@
-package com.example.creational;
+package com.example.patterns.creational;
 
 import java.util.Hashtable;
 
