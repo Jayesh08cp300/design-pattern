@@ -1,4 +1,4 @@
-package com.example.patterns.creational;
+package com.example.patterns.creational.factory;
 
 enum DrawId {
 	RECTANGLE, CIRCLE;

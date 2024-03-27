@@ -1,4 +1,4 @@
-package com.example.patterns.creational;
+package com.example.patterns.creational.singleton;
 
 class LazyInitialization {
 	private static LazyInitialization lazyInitialization;
