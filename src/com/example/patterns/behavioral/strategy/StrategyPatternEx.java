@@ -1,4 +1,4 @@
-package com.example.patterns.behavioral.template.strategy;
+package com.example.patterns.behavioral.strategy;
 
 interface PaymentStrategy {
 	void pay(double amount);
