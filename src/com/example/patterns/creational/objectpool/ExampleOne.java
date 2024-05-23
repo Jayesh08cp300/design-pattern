@@ -13,6 +13,8 @@ abstract class Connection implements Cloneable {
 		return connectionUrl;
 	}
 
+	abstract void setConnectionUrl(String connectionUrl);
+
 	public String getConnectionName() {
 		return connectionName;
 	}
@@ -20,8 +22,6 @@ abstract class Connection implements Cloneable {
 	public void setConnectionName(String connectionName) {
 		this.connectionName = connectionName;
 	}
-
-	abstract void setConnectionUrl(String connectionUrl);
 
 	@Override
 	public Connection clone() {

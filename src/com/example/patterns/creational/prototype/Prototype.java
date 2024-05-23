@@ -71,7 +71,8 @@ class ShapeCache {
 	}
 
 	public static Shape getShape(int id) {
-		return (Shape) SHAPES.get(id).clone();
+		return (Shape) SHAPES.get(id)
+				.clone();
 	}
 
 }

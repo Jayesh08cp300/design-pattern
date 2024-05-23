@@ -53,9 +53,9 @@ public class ExampleTwo {
 		PooledObject obj2 = objectPool.getObject();
 		PooledObject obj3 = objectPool.getObject();
 
-		System.out.println("Object 1 ID: " + obj1.getId() + "Object = "+ obj1.toString());
-		System.out.println("Object 2 ID: " + obj2.getId() + "Object = "+ obj2.toString());
-		System.out.println("Object 3 ID: " + obj3.getId() + "Object = "+ obj3.toString());
+		System.out.println("Object 1 ID: " + obj1.getId() + "Object = " + obj1.toString());
+		System.out.println("Object 2 ID: " + obj2.getId() + "Object = " + obj2.toString());
+		System.out.println("Object 3 ID: " + obj3.getId() + "Object = " + obj3.toString());
 
 		// Release objects back to the pool
 		objectPool.releaseObject(obj1);
@@ -66,15 +66,15 @@ public class ExampleTwo {
 		PooledObject obj4 = objectPool.getObject();
 		PooledObject obj5 = objectPool.getObject();
 
-		System.out.println("Object 4 ID: " + obj4.getId() + "Object = "+ obj4.toString());
-		System.out.println("Object 5 ID: " + obj5.getId() + "Object = "+ obj5.toString());
+		System.out.println("Object 4 ID: " + obj4.getId() + "Object = " + obj4.toString());
+		System.out.println("Object 5 ID: " + obj5.getId() + "Object = " + obj5.toString());
 
 		PooledObject obj6 = objectPool.getObject();
 		PooledObject obj7 = objectPool.getObject();
 		PooledObject obj8 = objectPool.getObject();
 
-		System.out.println("Object 6 ID: " + obj4.getId() + "Object = "+ obj6.toString());
-		System.out.println("Object 7 ID: " + obj5.getId() + "Object = "+ obj7.toString());
-		System.out.println("Object 8 ID: " + obj5.getId() + "Object = "+ obj8.toString());
+		System.out.println("Object 6 ID: " + obj4.getId() + "Object = " + obj6.toString());
+		System.out.println("Object 7 ID: " + obj5.getId() + "Object = " + obj7.toString());
+		System.out.println("Object 8 ID: " + obj5.getId() + "Object = " + obj8.toString());
 	}
 }

@@ -5,33 +5,33 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public abstract class Converter<T, U> {
+public abstract class Converter<Source, Destination> {
 
-	private final Function<T, U> fromDto;
-	private final Function<U, T> fromEntity;
+	private final Function<Source, Destination> toDestination;
+	private final Function<Destination, Source> toSource;
 
-	public Converter(final Function<T, U> fromDto, final Function<U, T> fromEntity) {
-		this.fromDto = fromDto;
-		this.fromEntity = fromEntity;
+	public Converter(final Function<Source, Destination> toDestination, final Function<Destination, Source> toSource) {
+		this.toDestination = toDestination;
+		this.toSource = toSource;
 	}
 
-	public final U convertFromDto(final T dto) {
-		return fromDto.apply(dto);
+	public final Destination toDestination(final Source source) {
+		return toDestination.apply(source);
 	}
 
-	public final T convertFromEntity(final U entity) {
-		return fromEntity.apply(entity);
+	public final Source toSource(final Destination destination) {
+		return toSource.apply(destination);
 	}
 
-	public final List<U> createFromDtos(final Collection<T> dtos) {
-		return dtos.stream()
-				.map(this::convertFromDto)
+	public final List<Destination> toDestinations(final Collection<Source> sources) {
+		return sources.stream()
+				.map(this::toDestination)
 				.collect(Collectors.toList());
 	}
 
-	public final List<T> createFromEntities(final Collection<U> entities) {
-		return entities.stream()
-				.map(this::convertFromEntity)
+	public final List<Source> toSources(final Collection<Destination> destinations) {
+		return destinations.stream()
+				.map(this::toSource)
 				.collect(Collectors.toList());
 	}
 }

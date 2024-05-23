@@ -13,8 +13,9 @@ public class Client {
 
 		Converter<CustomerDto, Customer> CustomerConverter = new CustomerConverter();
 
-		CustomerDto dtoCustomer = new CustomerDto("100", "Ramesh", "Fadatare", true);
-		Customer Customer = CustomerConverter.convertFromDto(dtoCustomer);
+		CustomerDto customerDto = new CustomerDto("100", "Ramesh", "Fadatare", true);
+		Customer Customer = CustomerConverter.toDestination(customerDto);
+
 		System.out.println("Entity converted from DTO:" + Customer);
 
 		List<Customer> customers = new ArrayList<>();
@@ -27,9 +28,9 @@ public class Client {
 		customers.forEach((customer) -> System.out.println(customer.getCustomerId()));
 
 		System.out.println("DTO entities converted from domain:");
-		List<CustomerDto> dtoEntities = CustomerConverter.createFromEntities(customers);
-		dtoEntities.forEach(System.out::println);
-		dtoEntities.forEach((customer) -> System.out.println(customer.getCustomerId()));
+		List<CustomerDto> customerDtos = CustomerConverter.toSources(customers);
+		customerDtos.forEach(System.out::println);
+		customerDtos.forEach((customer) -> System.out.println(customer.getCustomerId()));
 
 	}
 }
